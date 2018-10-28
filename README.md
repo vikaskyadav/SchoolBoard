@@ -1,5 +1,6 @@
 # SchoolBoard
-Schoolboard Demo
+
+Schoolboard App Demo Link: http://schoolapp.surge.sh/
 
 Built Using:
 
