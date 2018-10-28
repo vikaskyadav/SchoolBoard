@@ -11,17 +11,17 @@
 }
 
 .Fail {
-  color: #e74c3c;
-  font-weight: 500;
+  color: #e74c3c !important;
+  font-weight: 500 !important;
 }
 
-.topper {
-  color: green;
-  font-weight: 500;
+.Topper {
+  color: green !important;
+  font-weight: 500 !important;
 }
 
 .dialogform {
-  position: fixed;
-  bottom: 20px;
-  right: 5px;
+  position: fixed !important;
+  bottom: 15px !important;
+  right: 15px !important;
 }

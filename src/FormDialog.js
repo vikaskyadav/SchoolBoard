@@ -6,9 +6,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import IconButton from "@material-ui/core/IconButton";
 import AddIcon from "@material-ui/icons/Add";
-import NavigationIcon from "@material-ui/icons/Navigation";
 import Snackbar from "@material-ui/core/Snackbar";
 import "./styles.css";
 
@@ -44,6 +42,12 @@ export default class FormDialog extends React.Component {
       formSuccess: true,
       open: false
     });
+
+    setTimeout(() => {
+      this.setState({
+          formSuccess: false
+      });
+  }, 3000);
   };
 
   handleChange = (name, event) => {
@@ -53,7 +57,7 @@ export default class FormDialog extends React.Component {
     });
 
     // Field validations can be done here or before changing the state for particular field
-    // Field validations can be done either using regexes or through supportive validation library for material-ui
+    // Field validations can be done either using regular expression or through supportive validation library for material-ui
     if (
       this.state.fName &&
       this.state.lName &&
@@ -148,7 +152,6 @@ export default class FormDialog extends React.Component {
           </DialogActions>
         </Dialog>
         <Snackbar
-          autoHideDuration="3"
           message="Success! Your Application Form has been submitted"
           open={this.state.formSuccess}
           className="toast"

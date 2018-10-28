@@ -44,7 +44,7 @@ function Board(props) {
   const { classes } = props;
   return (
     <Paper className={classes.root}>
-      <Table className={classes.table} padding="dense">
+      <Table className={classes.table} >
         <TableHead className="THeader">
           <TableRow>
             <TableCell>Name</TableCell>
@@ -64,31 +64,31 @@ function Board(props) {
                   {row.name}
                 </TableCell>
                 <TableCell numeric>
-                  {row.rollNumber ? row.rollNumber : "NA"}
+                  {row.rollNumber}
                 </TableCell>
                 <TableCell numeric>
-                  {row.marks.Maths ? row.marks.Maths : "NA"}
+                  {row.marks.Maths}
+                  </TableCell>
+                <TableCell numeric>
+                  {row.marks.Science}
                 </TableCell>
                 <TableCell numeric>
-                  {row.marks.Science ? row.marks.Science : "NA"}
-                </TableCell>
-                <TableCell numeric>
-                  {row.marks.English ? row.marks.English : "NA"}
+                  {row.marks.English}
                 </TableCell>
                 <TableCell numeric>
                   {parseInt(row.marks.English) +
                     parseInt(row.marks.Science) +
                     parseInt(row.marks.Maths)}
                 </TableCell>
-                {row.rollNumber == topperRollNumber ? (
-                  <TableCell className="topper">Topper</TableCell>
-                ) : parseInt(row.marks.English) >= 20 &&
-                parseInt(row.marks.Science) >= 20 &&
-                parseInt(row.marks.Maths) >= 20 ? (
-                  <TableCell>Passed</TableCell>
-                ) : (
+                { row.rollNumber == topperRollNumber ? 
+                (<TableCell className="Topper">Topper</TableCell>)
+                : parseInt(row.marks.English) >= 20 &&
+               parseInt(row.marks.Science) >= 20 &&
+               parseInt(row.marks.Maths) >= 20 ? (
+                 <TableCell>Passed</TableCell>
+               ):
                   <TableCell className="Fail">Fail</TableCell>
-                )}
+                }
               </TableRow>
             );
           })}
