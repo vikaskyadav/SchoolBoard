@@ -20,6 +20,6 @@ Installation:
 
 * npm install
 
-* npm run start to run in dev mode
+* `npm run start` to run in dev mode
 
-* npm run build to run in prod mode
+* `npm run build` to run in prod mode
